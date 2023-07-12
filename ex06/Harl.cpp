@@ -60,6 +60,8 @@ void Harl::complain(std::string level) const {
 				case 3:
 						this->_error();
 						break;
+				default:
+					break;
 			}
 			return;
 		}
