@@ -45,12 +45,10 @@ void Harl::complain(std::string level) const {
 	void (Harl::*fptr[4])() const = {&Harl::_debug, &Harl::_info, &Harl::_warning, &Harl::_error};
 	int i = 0;
 
-	while (i < 4)
-	{
-		if (levels[i] == level)
-		{
+	while (i < 4) {
+		if (levels[i] == level) {
 			(this->*fptr[i])();
-			return ;
+			return;
 		}
 		i++;
 	}
