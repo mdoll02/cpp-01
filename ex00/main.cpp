@@ -13,8 +13,7 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-int main()
-{
+int main() {
 
 	std::cout << "--- Normal Zombie ---" << std::endl;
 	Zombie zombie("Zombie");

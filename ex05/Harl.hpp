@@ -18,13 +18,18 @@
 class Harl {
 public:
 	Harl();
+
 	~Harl();
+
 	void complain(std::string level) const;
 
 private:
 	void _debug() const;
+
 	void _info() const;
+
 	void _warning() const;
+
 	void _error() const;
 
 };

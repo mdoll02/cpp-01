@@ -15,8 +15,7 @@
 #include "HumanA.hpp"
 #include "HumanB.hpp"
 
-int main()
-{
+int main() {
 	{
 		Weapon club = Weapon("Dry stick");
 		HumanA franz("Franz", club);

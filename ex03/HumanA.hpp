@@ -16,16 +16,17 @@
 #include <string>
 #include "Weapon.hpp"
 
-class HumanA
-{
-	public:
-		HumanA(std::string name, Weapon &weaponType);
-		~HumanA();
-		void attack() const;
+class HumanA {
+public:
+	HumanA(std::string name, Weapon &weaponType);
 
-	private:
-		std::string _name;
-		Weapon &_weapon;
+	~HumanA();
+
+	void attack() const;
+
+private:
+	std::string _name;
+	Weapon &_weapon;
 };
 
 

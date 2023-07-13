@@ -13,16 +13,14 @@
 #include "HumanA.hpp"
 #include <iostream>
 
-HumanA::HumanA(std::string name, Weapon &weaponType) : _name(name), _weapon(weaponType)
-{
+HumanA::HumanA(std::string name, Weapon &weaponType) : _name(name), _weapon(weaponType) {
 	std::cout << "A new HumanA was born!" << std::endl;
 }
-HumanA::~HumanA()
-{
+
+HumanA::~HumanA() {
 	std::cout << _name << " has died :(" << std::endl;
 }
 
-void HumanA::attack() const
-{
+void HumanA::attack() const {
 	std::cout << _name << " attacks with their " << _weapon.getType() << std::endl;
 }

@@ -13,16 +13,14 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-int main()
-{
+int main() {
 
 	std::cout << "--- Creating horde ---" << std::endl;
 	Zombie *horde = zombieHorde(5, "Hans");
 
 	std::cout << "--- Announcing horde ---" << std::endl;
 	int i = 0;
-	while (i < 5)
-	{
+	while (i < 5) {
 		horde[i].announce();
 		i++;
 	}

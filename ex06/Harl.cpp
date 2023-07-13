@@ -52,14 +52,14 @@ void Harl::complain(std::string level) const {
 		if (levels[i] == level) {
 			switch (i) {
 				case 0:
-						this->_debug();
+					this->_debug();
 				case 1:
-						this->_info();
+					this->_info();
 				case 2:
-						this->_warning();
+					this->_warning();
 				case 3:
-						this->_error();
-						break;
+					this->_error();
+					break;
 				default:
 					break;
 			}

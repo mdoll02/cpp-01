@@ -13,8 +13,7 @@
 #include <iostream>
 #include "Harl.hpp"
 
-int main()
-{
+int main() {
 	Harl harl;
 
 	std::cout << "------ Debug Level ------" << std::endl;

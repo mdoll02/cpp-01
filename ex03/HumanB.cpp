@@ -13,22 +13,18 @@
 #include "HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(std::string name) : _name(name)
-{
+HumanB::HumanB(std::string name) : _name(name) {
 	std::cout << "A new HumanB was born!" << std::endl;
 }
 
-HumanB::~HumanB()
-{
+HumanB::~HumanB() {
 	std::cout << _name << " has died :(" << std::endl;
 }
 
-void HumanB::attack() const
-{
+void HumanB::attack() const {
 	std::cout << _name << " attacks with their " << _weapon->getType() << std::endl;
 }
 
-void HumanB::setWeapon(Weapon &newWeapon)
-{
+void HumanB::setWeapon(Weapon &newWeapon) {
 	_weapon = &newWeapon;
 }
