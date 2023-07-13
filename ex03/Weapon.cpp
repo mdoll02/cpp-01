@@ -12,8 +12,7 @@
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(std::string type)
-{
+Weapon::Weapon(std::string type) {
 	if (type.empty())
 		_type = "hands";
 	else
@@ -22,13 +21,11 @@ Weapon::Weapon(std::string type)
 
 Weapon::~Weapon() {}
 
-const std::string& Weapon::getType()
-{
+const std::string &Weapon::getType() {
 	return _type;
 }
 
-void Weapon::setType(std::string newType)
-{
+void Weapon::setType(std::string newType) {
 	if (newType.empty())
 		_type = "hands";
 	else

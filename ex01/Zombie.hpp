@@ -15,19 +15,21 @@
 
 #include <string>
 
-class Zombie
-{
-	public:
-		Zombie();
-		~Zombie();
-		void announce() const;
-		void setName(std::string name);
+class Zombie {
+public:
+	Zombie();
 
-	private:
-		std::string _name;
+	~Zombie();
+
+	void announce() const;
+
+	void setName(std::string name);
+
+private:
+	std::string _name;
 
 };
 
-Zombie*    zombieHorde( int N, std::string name );
+Zombie *zombieHorde(int N, std::string name);
 
 #endif

@@ -13,22 +13,18 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie()
-{
-  std::cout << "Zombie horde created" << std::endl;
+Zombie::Zombie() {
+	std::cout << "Zombie horde created" << std::endl;
 }
 
-Zombie::~Zombie()
-{
-  std::cout << "Zombie horde destroyed" << std::endl;
+Zombie::~Zombie() {
+	std::cout << "Zombie horde destroyed" << std::endl;
 }
 
-void Zombie::announce(void) const
-{
-  std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+void Zombie::announce(void) const {
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }
 
-void Zombie::setName(std::string name)
-{
+void Zombie::setName(std::string name) {
 	_name = name;
 }
