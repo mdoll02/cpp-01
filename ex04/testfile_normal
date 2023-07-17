@@ -1,14 +1,14 @@
-NAME := sed
+all := sed
 CC := c++
 CFLAGS := -Wall -Wextra -Werror -std=c++98 -g
 SRC := main.cpp
 
 OBJ := $(SRC:%.cpp=%.o)
 
-all: $(NAME)
+all: $(all)
 
-$(NAME): $(OBJ)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJ)
+$(all): $(OBJ)
+	@$(CC) $(CFLAGS) -o $(all) $(OBJ)
 
 %.o: %.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -18,7 +18,7 @@ clean:
 	rm -f $(OBJ)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -f $(all)
 
 re: fclean all
 
@@ -27,10 +27,10 @@ re: fclean all
 
 
 
-                NAME
+                all
                                                             N A M E
-                                            NAME
-            NAME
+                                            all
+            all
 
 
 

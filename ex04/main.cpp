@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string>
 #include <iostream>
 #include <fstream>
-#include <sstream>
 
 static void replaceLine(std::string line, const std::string &s1, const std::string &s2, std::ostream &replaceFile) {
+
 	unsigned long pos;
 
 	while ((pos = line.find(s1)) != std::string::npos) {
@@ -22,8 +23,6 @@ static void replaceLine(std::string line, const std::string &s1, const std::stri
 		line.insert(pos, s2);
 	}
 	replaceFile << line;
-	if (line.find('\n'))
-		replaceFile << '\n';
 }
 
 int main(int argc, char **argv) {
@@ -32,20 +31,19 @@ int main(int argc, char **argv) {
 		return 1;
 	}
 
-	std::string inFile(argv[1]);
-	std::ifstream file(inFile);
+	std::ifstream file;
+	file.open(argv[1]);
 	if (!file.good()) {
-		std::cout << inFile << " does not exist!" << std::endl;
-		return 1;
-	} else if (file.peek() == std::ifstream::traits_type::eof()) {
-		std::cout << "The file is empty!" << std::endl;
-		file.close();
+		std::cout << argv[1] << " does not exist!" << std::endl;
 		return 1;
 	}
 
-	std::ofstream replaceFile(inFile + ".replace");
+	std::string fileName = argv[1];
+	fileName.append(".replace");
+	const char* fileNameChr = fileName.c_str();
+	std::ofstream replaceFile(fileNameChr);
 	if (!replaceFile.good()) {
-		std::cout << "could not open " << replaceFile << " does not exist!" << std::endl;
+		std::cout << "could not open " << replaceFile << std::endl;
 		file.close();
 		return 1;
 	}
@@ -54,6 +52,8 @@ int main(int argc, char **argv) {
 	std::cout << "Replacing " << argv[2] << " with " << argv[3] << std::endl;
 	while (std::getline(file, line)) {
 		replaceLine(line, argv[2], argv[3], replaceFile);
+		if (line.find('\n') && !file.eof())
+			replaceFile << '\n';
 	}
 
 	file.close();
